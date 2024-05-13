@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Header } from "./components/Header";
+import { Body } from "./components/Body";
 
-const resList = [
+export const resList = [
   {
     type: "restaurant",
     data: {
@@ -2192,81 +2194,6 @@ function AppLayout() {
     <div className="app">
       <Header />
       <Body />
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/food-app-icon-food-explorer-design-template-8ae900e41ccbc0a2e1b48a85d239e389_screen.jpg?ts=1585237320"
-          alt="logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
-
-function RestaurantCard({ resName, ratings, prepTime, resData }) {
-  const {
-    cloudinaryImageId,
-    name,
-    costForTwo,
-    deliveryTime,
-    cuisines,
-    avgRating,
-  } = resData?.data;
-  return (
-    <div className="res-card" style={{ backgroundColor: "#ffd1cf" }}>
-      <img
-        className="res-card-img"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/" +
-          cloudinaryImageId
-        }
-        alt="food-image"
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{avgRating} stars</h4>
-      <h4>Rs. {costForTwo / 100} for two </h4>
-      <h4>{deliveryTime} minutes</h4>
-    </div>
-  );
-}
-
-function Body({ names, children, resName }) {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {/* <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
-        <RestaurantCard resData={resList[3]} />
-        <RestaurantCard resData={resList[4]} /> */}
-        {/* <RestaurantCard resData={resList} /> */}
-        {/* <RestaurantCard
-          resName="La Pinoz"
-          cuisines="Momos, Garlic bread"
-          ratings="4.4"
-          prepTime="18 minutes"
-        /> */}
-        {resList.map((restaurant) => (
-          <RestaurantCard resData={restaurant} key={restaurant.data.id} />
-        ))}
-      </div>
     </div>
   );
 }
