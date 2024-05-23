@@ -47,3 +47,34 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.shimmer-card {
+  height: 400px;
+  width: 280px;
+  background-color: #cfcece;
+  margin: 10px;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login {
+  margin: 5px;
+  cursor: pointer;
+  background-color: #eae1e1;
+}
+
+.search {
+  /* padding: 10px; */
+}
+
+.filter {
+  display: flex;
+}
